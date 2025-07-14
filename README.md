@@ -1,10 +1,7 @@
-Olá\! Que ótimo que você está pensando no `README.md` desde agora. É uma excelente prática para organizar o projeto, comunicar seu propósito e atrair potenciais colaboradores.
-
-Um `README.md` bem elaborado não só embeleza seu repositório, mas também serve como a documentação principal do seu projeto. Vamos criar um modelo que atenda a todas as suas expectativas, com um toque sustentável, foco em estudos iniciais, e todas as informações essenciais.
-
+# Air Sense
 -----
 
-## 🌬️ Air Sense: Monitorando o Ar, Respirando Melhor 🌳
+## 🌬️Monitorando o Ar, Respirando Melhor 🌳
 
 -----
 
