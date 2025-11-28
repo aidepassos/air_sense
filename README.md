@@ -101,7 +101,7 @@ Para ter o **Air Sense** rodando localmente no seu ambiente de desenvolvimento, 
 
 1.  **Clone o Repositório:**
     ```bash
-    git clone https://github.com/seu-usuario/air-sense.git
+    git clone https://github.com/aidepassos/air_sense.git
     cd air-sense
     ```
 2.  **Instale as Dependências:**
