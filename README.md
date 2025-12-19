@@ -132,7 +132,7 @@ Juntos, podemos aprender e construir uma ferramenta legal para um ar mais limpo\
 
 ### 📜 Licença
 
-Este projeto é desenvolvido para fins de estudo e está sob os termos da Licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+Este projeto é desenvolvido inicialmente para fins de estudos e está sob os termos da Licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
 -----
 

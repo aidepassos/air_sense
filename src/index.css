@@ -1,7 +1,12 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------- */
+/* ESTILOS GLOBAIS E FUNDO */
+/* ---------------------------------------------------- */
 :root {
-  background: linear-gradient(to bottom right, #9dc8ff, #a9ffd7);
+  /* SEU GRADIENTE ORIGINAL */
+  background: linear-gradient(to bottom right, #9dc8ff, #a9ffd7); 
+  
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -15,6 +20,40 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 1. GARANTIR QUE O GRADIENTE CUBRA TUDO */
+html {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  
+  /* IMPORTANTE: Garante que o fundo do body seja transparente para mostrar o gradiente */
+  background-color: transparent; 
+}
+
+/* Estilos de Tipografia */
+h1 {
+  /* Mantendo seu estilo h1 */
+  font-size: 3.2em; 
+  line-height: 1.1;
+  color: #3fb4a5; /* Cor de destaque para o Título Principal */
+}
+
+/* NOVO: Estilizando o h2 para usar a mesma cor de destaque */
+h2 {
+    color: #3fb4a5; 
+}
+
+
+/* ---------------------------------------------------- */
+/* ESTILOS DE ELEMENTOS (para manter sua definição) */
+/* ---------------------------------------------------- */
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -24,48 +63,31 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  color: #1a8252;
-}
-
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color:#0bb4c7;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #646cff; 
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* ---------------------------------------------------- */
+/* CONFIGURAÇÕES DE TEMA (light/dark) */
+/* ---------------------------------------------------- */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    /* Remove a definição de background-color para o :root no modo light para manter o gradiente */
   }
   a:hover {
     color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
   }
 }
