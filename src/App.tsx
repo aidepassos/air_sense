@@ -35,11 +35,52 @@ interface DadosPoluenteProps {
     dados: { concentration: number; aqi: number } | null;
 }
 
+// 4. Objeto com dicas de cuidados para cada poluente e nível de qualidade
+const dicasCuidados: Record<string, Record<string, string>> = {
+  'CO': { 
+    'Bom': 'Ar puro! Aproveite para caminhar ao ar livre.',
+    'Moderado': 'Ventile ambientes. Evite exercícios intensos.', 
+    'Ruim': 'Fique em casa. Use purificador.',
+    'Muito Insalubre': 'Não saia. Monitore sintomas.'
+  },
+  'PM25': { 
+    'Bom': 'Qualidade excelente! Perfeito para esportes ao ar livre.',
+    'Moderado': 'Reduza atividades externas.',
+    'Ruim': 'Use máscara N95 se sair.',
+    'Muito Insalubre': 'Fique em casa com filtro HEPA.'
+  },
+  'PM10': { 
+    'Bom': 'Ar limpo! Ideal para brincar e passear.',
+    'Moderado': 'Limpe superfícies regularmente.',
+    'Ruim': 'Evite varrer ou aspirar.',
+    'Muito Insalubre': 'Não saia de casa.'
+  },
+  'SO2': { 
+    'Bom': 'Ar saudável! Ótimo para respirar fundo.',
+    'Moderado': 'Asmáticos evitem esforço.',
+    'Ruim': 'Fique longe de indústrias.',
+    'Muito Insalubre': 'Use máscara e fique em casa.'
+  },
+  'NO2': { 
+    'Bom': 'Perfeito para crianças brincarem fora!',
+    'Moderado': 'Crianças fiquem em casa.',
+    'Ruim': 'Evite tráfego intenso.',
+    'Muito Insalubre': 'Fique com filtros de ar.'
+  },
+  'O3': { 
+    'Bom': 'Ar fresco! Aproveite para correr ou pedalar.',
+    'Moderado': 'Evite exercícios à tarde.',
+    'Ruim': 'Fique em casa durante o dia.',
+    'Muito Insalubre': 'Não saia. Monitore respiração.'
+  }
+};
+
 function DadosQualidadeAr({ nome, dados }: DadosPoluenteProps) {
     if (!dados) return null; // Não renderiza se os dados estiverem vazios
 
     const nivel = obterNivelQualidade(dados.aqi);
     const explicacao = explicacoesPoluentes[nome];
+    const dica = dicasCuidados[nome]?.[nivel] || 'Consulte um médico se sentir sintomas.';
 
     let classeCor = 'text-gray-700';
     if (nivel === 'Bom') {
@@ -61,6 +102,9 @@ function DadosQualidadeAr({ nome, dados }: DadosPoluenteProps) {
             <blockquote className='text-sm text-gray-500 mt-1 italic'>
                 {explicacao}
             </blockquote>
+            <div className='mt-2 p-2 bg-blue-50 border border-blue-200 rounded text-xs'>
+            <span className='font-semibold text-blue-800'>💡 Dica:</span> {dica}
+        </div>
         </div>
     );
 }
